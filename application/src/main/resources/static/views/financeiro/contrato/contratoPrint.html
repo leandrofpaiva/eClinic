@@ -1,0 +1,21 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-file-text-o fa-fw"/> Impress&atilde;o de Contrato </h4>
+      </div>
+    
+      <div id="printable" class="modal-body">
+        <div class="container-fluid">
+          <div ng-bind-html="renderHtml()"></div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel();">
+          <span class="fa fa-undo fa-fw"></span>
+          Voltar
+        </button>
+        <button type="button" class="btn btn-default" ng-click="print(printable);">
+          <span class="fa fa-print fa-fw"></span>
+          Imprimir
+        </button>
+      </div>

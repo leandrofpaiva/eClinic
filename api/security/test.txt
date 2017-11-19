@@ -1,0 +1,29 @@
+Testando o login:
+
+http://localhost:8080/usuario/login
+
+Headers:
+
+Content-Type: application/json; charset=UTF-8
+
+Body:
+
+{"name": "tom"}
+
+-----------------
+
+Testando a consulta do cep:
+
+http://localhost:8080/api/cep/findAddressByCep/37550-000
+
+headers:
+
+x-access-token: ((TOKEN gerado no login))
+
+
+{"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b20iLCJyb2xlcyI6WyJ1c2VyIl0sImlhdCI6MTQ2MjMwNTIzOH0.Sa50FkJ7bCVvaMpmChBu976eHhc6DGyh_N3JAirGGwg"}
+
+
+insert into users (email, enabled, firstname, lastname, password, username) values ('leandrof.paiva@gmail.com', 1, 'leandro', 'fernandes', '1234', 'leandrof.paiva@gmail.com');
+insert into authorities (authority, user_id) values ('USER', 1);
+insert into authorities (authority, user_id) values ('ADMIN', 1);

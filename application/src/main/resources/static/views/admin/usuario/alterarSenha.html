@@ -1,0 +1,62 @@
+      <div id="page-wrapper" ng-controller="UsuarioCtrl">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header"><i class="fa fa-lock fa-fw"></i> Alterar Senha</h1>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+
+        <form name="alterar_senha_form" novalidate >
+		  <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Nova Senha *</label>
+                <input type="password" name="password" value="" ng-model="item.password_hash" class="form-control" placeholder="Nova Senha" required maxlength="14" size="14">
+                <div class="alert alert-danger" role="alert" ng-show="alterar_senha_form.password.$error.required && alterar_senha_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Nova Senha Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label> Confirmar Nova Senha *</label>
+                <input type="password" name="cpassword" value="" ng-model="item.cpassword_hash" class="form-control" placeholder="Confirmar Nova Senha" required maxlength="14" size="14" >
+                
+                <div class="alert alert-danger" role="alert" ng-show="alterar_senha_form.cpassword.$error.required && alterar_senha_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Confirma&ccedil;&atilde;ao de Senha Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+              <a href="#/home"><button type="button" class="btn btn-default"><span class="fa fa-undo fa-fw"></span>Voltar</button></a> 
+              <button type="button" class="btn btn-primary" ng-click="changePassword(item);"><span class="fa fa-save fa-fw"></span>Confirmar</button>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </form>
+        
+        <div class="row">
+          <br><br>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <label>{{ message }}</label>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+
+          

@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+multipart:
+  maxFileSize: 10Mb
+  maxRequestSize: 10Mb

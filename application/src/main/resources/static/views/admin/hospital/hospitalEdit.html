@@ -1,0 +1,84 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-plus-square fa-fw"/>Editar Hospital</h4>
+      </div>
+      
+      <form name="hospital_form" novalidate >
+        <input type="hidden" ng-model="item.id"/>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Hospital *</label>
+                <input type="text" name="nome" ng-model="item.nome" class="form-control" placeholder="Nome" required maxlength="40" autofocus>
+                <div class="alert alert-danger" role="alert" ng-show="hospital_form.nome.$error.required && hospital_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Hospital Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <label>CNPJ *</label>
+                <input type="text" name="cnpj" ng-model="item.cnpj.cnpj" class="form-control" placeholder="CNPJ" required maxlength="20" autofocus>
+                <div class="alert alert-danger" role="alert" ng-show="hospital_form.cnpj.$error.required && hospital_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  CNPJ Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Telefone *</label>
+                <input type="text" name="contato" ng-model="item.contato.telefone" class="form-control" placeholder="Telefone" required maxlength="20" autofocus>
+                <div class="alert alert-danger" role="alert" ng-show="hospital_form.contato.$error.required && hospital_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Telefone Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Status *</label>
+                <select name="status" class="selectpicker show-tick form-control"
+                  ng-model="item.status.id"
+                  ng-options="value.id as value.nome for value in list_status" required>
+                </select>
+                
+                <div class="alert alert-danger" role="alert" ng-show="hospital_form.status.$error.required && hospital_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Status Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+             * Campos obrigat&oacute;rios
+            </div>
+          </div>
+        </div> <!-- /.modal-body -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="cancel();">
+            <span class="fa fa-undo fa-fw"></span>Cancelar
+          </button>
+          <button type="button" ng-disabled="isDisabled" class="btn btn-primary" ng-click="saveItem(item);">
+            <span class="fa fa-save fa-fw"></span>Confirmar
+          </button>
+        </div>
+      </form>

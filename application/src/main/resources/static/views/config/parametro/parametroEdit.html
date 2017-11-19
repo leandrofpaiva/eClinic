@@ -1,0 +1,46 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-cogs fa-fw"/>Alterar Par&acirc;metros</h4>
+      </div>
+      
+      <form name="parametro_form" novalidate >
+        <input type="hidden" ng-model="item.id"/>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome do Par&acirc;metros</label>
+                <input type="text" disabled="true" name="nome" ng-model="item.nome" class="form-control" placeholder="Par&acirc;metros">
+              </div>
+            </div>  
+          </div>
+          
+		  <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Valor</label>
+                <input type="text" name="valor" ng-model="item.valor" class="form-control" placeholder="Par&acirc;metros" autofocus required maxlength="10">
+                <div class="alert alert-danger" role="alert" ng-show="parametro_form.valor.$error.required && parametro_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Valor Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+		  
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Descri&ccedil;&atilde;o</label>
+                <textarea disabled="true" class="form-control" cols="50" rows="5" ng-model="item.descricao"></textarea>
+              </div>
+            </div>  
+          </div>
+        </div> <!-- /.modal-body -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="cancel();">Cancelar</button>
+          <button type="button" class="btn btn-primary" ng-click="saveItem(item);">Confirmar</button>
+        </div>
+      </form>

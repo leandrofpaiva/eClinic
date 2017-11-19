@@ -1,0 +1,68 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-pencil-square fa-fw"></i>Editar Curso</h4>
+      </div>
+      
+      <form name="contrato_form" novalidate >
+        <input type="hidden" ng-model="item.id"/>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome do Curso *</label>
+                <input type="text" name="nome" ng-model="item.nome" class="form-control" placeholder="nome" autofocus required maxlength="40">
+                <div class="alert alert-danger" role="alert" ng-show="contrato_form.nome.$error.required && contrato_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Nome do Curso Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label>Plano *</label>
+                <select name="id_plano" class="selectpicker show-tick form-control"
+                  ng-model="item.id_ocupacao"
+                  ng-options="value.id as value.nome for value in list_ocupacao" required autofocus>
+                </select>
+                    
+                <div class="alert alert-danger" role="alert" ng-show="turma_form.id_ocupacao.$error.required && turma_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Ocupa&ccedil;&atilde;o Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Descri&ccedil;&atilde;o</label>
+                <textarea name="descricao" class="form-control" cols="50" rows="5" ng-model="item.descricao"></textarea>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                * Campos obrigat&oacute;rios
+              </div>
+            </div>
+          </div>
+        </div> <!-- /.modal-body -->
+      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="cancel();">
+            <span class="fa fa-undo fa-fw"></span>Cancelar
+          </button>
+          <button type="button" ng-disabled="isDisabled" class="btn btn-primary" ng-click="saveItem(item);">
+            <span class="fa fa-save fa-fw"></span>Confirmar
+          </button>
+        </div>
+      </form>
+   

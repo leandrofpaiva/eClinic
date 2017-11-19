@@ -1,0 +1,5 @@
+.settings
+.vagrant
+.project
+.classpath
+target

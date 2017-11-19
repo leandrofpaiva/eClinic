@@ -1,0 +1,135 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-user-md fa-fw"/>Cadastrar Profissional</h4>
+      </div>
+      
+      <form name="profissional_form" novalidate >
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome *</label>
+                <input type="text" name="nome" ng-model="item.nome" class="form-control" placeholder="Nome" required maxlength="40" autofocus>
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.nome.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Nome Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>CRM *</label>
+                <input type="text" name="crm" ng-model="item.crm" class="form-control" placeholder="CRM" required maxlength="14">
+                    
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.crm.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  CRM Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Telefone *</label>
+                <input type="text" name="contato" ng-model="item.contato.telefone" class="form-control" placeholder="Telefone" required maxlength="16">
+                    
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.contato.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Telefone Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>CPF *</label>
+                <input type="text" name="cpf" ng-model="item.cpf.cpf" class="form-control" placeholder="CPF" required maxlength="14">
+                    
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.cpf.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  CPF Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Cargo *</label>
+                <select name="cargo" class="selectpicker show-tick form-control"
+                  ng-model="item.cargo"
+                  ng-options="value.id as value.nome for value in list_cargo" required>
+                </select>
+                
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.cargo.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Cargo Requerido!
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Especialidade *</label>
+                <select name="especialidade" class="selectpicker show-tick form-control"
+                  ng-model="item.especialidade"
+                  ng-options="value as value.nome for value in list_especialidade" required>
+                </select>
+                
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.especialidade.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Especialidade Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Status *</label>
+                <select name="status" class="selectpicker show-tick form-control"
+                  ng-model="item.status.id"
+                  ng-options="value as value.nome for value in list_status" required>
+                </select>
+                
+                <div class="alert alert-danger" role="alert" ng-show="profissional_form.status.$error.required && profissional_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Status Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+		  <!-- div>{{ item | json }}</div-->
+          <div class="row">
+            <div class="col-md-12">
+             * Campos obrigat&oacute;rios
+            </div>
+          </div>
+        </div> <!-- /.modal-body -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="cancel();">
+            <span class="fa fa-undo fa-fw"></span>Cancelar
+          </button>
+          <button type="button" ng-disabled="isDisabled" class="btn btn-primary" ng-click="saveItem(item);">
+            <span class="fa fa-save fa-fw"></span>Confirmar
+          </button>
+        </div>
+      </form>

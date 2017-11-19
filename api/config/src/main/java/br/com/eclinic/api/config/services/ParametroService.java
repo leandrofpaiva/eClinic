@@ -1,0 +1,49 @@
+package br.com.eclinic.api.config.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.eclinic.domain.config.Parametro;
+import br.com.eclinic.infrastructure.config.business.interfaces.IParametroBusiness;
+
+@RestController
+@RequestMapping("/api/parametro")
+public class ParametroService {
+
+	@Autowired
+	private IParametroBusiness parametroBusiness;
+
+	// Ex: http://localhost:8080/api/parametro/gravar/{parametro}
+	@RequestMapping(value = "/gravar", method = RequestMethod.POST)
+	public ResponseEntity<Parametro> gravar(@RequestBody Parametro parametro) {
+		parametro = parametroBusiness.gravar(parametro);
+		return new ResponseEntity<Parametro>(parametro, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/consultar", method = RequestMethod.GET)
+	public ResponseEntity<Parametro> consultar(@PathVariable("id") Integer id) {
+		Parametro parametro = parametroBusiness.consultar(id);
+		return new ResponseEntity<Parametro>(parametro, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/excluir", method = RequestMethod.DELETE)
+	public ResponseEntity<String> excluir(@PathVariable("id") Integer id) {
+		parametroBusiness.excluir(id);
+		return new ResponseEntity<String>("{'status': 'OK'}", HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/listarTodos", method = RequestMethod.GET)
+	public ResponseEntity<List<Parametro>> listarTodos() {
+		List<Parametro> listaParametro = parametroBusiness.listarTodos();
+		return new ResponseEntity<List<Parametro>>(listaParametro, HttpStatus.OK);
+	}
+
+}

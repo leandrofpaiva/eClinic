@@ -1,0 +1,58 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-file-o fa-fw"></i> Incluir Modelo de Contrato</h4>
+      </div>
+      
+      <form name="contrato_form" novalidate >
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nome *</label>
+                <input type="text" name="nome" ng-model="item.nome" class="form-control" placeholder="Nome" autofocus required>
+                
+                <div class="alert alert-danger" role="alert" ng-show="contrato_form.nome.$error.required && contrato_form.nome.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  Nome Requerido!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Modelo de Contrato *</label>
+                <!-- minieditor name="modelo" ng-model="item.modelo" options="options" required></minieditor-->
+                
+                <wysiwyg textarea-id="question" textarea-class="form-control"  textarea-height="180px" textarea-name="textareaQuestion" textarea-required ng-model="item.modelo" enable-bootstrap-title="true" textarea-menu="customMenu"></wysiwyg>
+              </div>
+              
+              
+              
+              <div class="alert alert-danger" role="alert" ng-show="contrato_form.modelo.$error.required && contrato_form.modelo.submitted">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                <span class="sr-only">Error:</span>
+                Modelo Requerido!
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+             * Campos obrigat&oacute;rios
+            </div>
+          </div>
+        </div> <!-- /.modal-body -->
+      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="cancel();">
+            <span class="fa fa-undo fa-fw"></span>Cancelar
+          </button>
+          <button type="button" ng-disabled="isDisabled" class="btn btn-primary" ng-click="saveItem(item);">
+            <span class="fa fa-save fa-fw"></span>Confirmar
+          </button>
+        </div>
+      </form>
+   

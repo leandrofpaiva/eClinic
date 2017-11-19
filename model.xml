@@ -1,0 +1,54 @@
+<templates>
+  <class name="Estados" package="br.com.upper.services.cep">
+    <attribute name="id" type="Integer" size="11" constraint="primary_key"/>
+    <attribute name="uf_id" type="String" size="11" constraint=""/>
+	<attribute name="nome" type="String" size="150" constraint=""/>
+	<attribute name="uf" type="String" size="6" constraint=""/>
+	<attribute name="capital" type="String" size="255" constraint=""/>
+	<attribute name="regiao" type="String" size="255" constraint=""/>
+	<attribute name="latitude" type="String" size="255" constraint=""/>
+	<attribute name="longitude" type="String" size="255" constraint=""/>
+	<attribute name="faixainicial1" type="String" size="255" constraint=""/>
+	<attribute name="faixafinal1" type="String" size="255" constraint=""/>
+	<attribute name="faixainicial2" type="String" size="255" constraint=""/>
+	<attribute name="faixafinal2" type="String" size="255" constraint=""/>
+  </class>
+  
+  <class name="Enderecos" package="br.com.upper.services.cep">
+    <attribute name="id" type="Integer" size="11" constraint="primary_key"/>
+    <attribute name="uf" type="String" size="5" constraint=""/>
+	<attribute name="cidade_id" type="String" size="15" constraint=""/>
+	<attribute name="cidade_nome" type="String" size="6" constraint=""/>
+	<attribute name="nomeslog" type="String" size="255" constraint=""/>
+	<attribute name="nomeclog" type="String" size="255" constraint=""/>
+	<attribute name="bairro_nome" type="String" size="255" constraint=""/>
+	<attribute name="logradouro" type="String" size="255" constraint=""/>
+	<attribute name="cep" type="String" size="255" constraint=""/>
+	<attribute name="logracompl" type="String" size="255" constraint=""/>
+	<attribute name="latitude" type="String" size="255" constraint=""/>
+	<attribute name="longitude" type="String" size="255" constraint=""/>
+  </class>
+  
+  <class name="Cidades" package="br.com.upper.services.cep">
+    <attribute name="id" type="Integer" size="11" constraint="primary_key"/>
+    <attribute name="cidade_id" type="String" size="255" constraint=""/>
+	<attribute name="tipo" type="String" size="255" constraint=""/>
+	<attribute name="nome" type="String" size="255" constraint=""/>
+	<attribute name="uf" type="String" size="10" constraint=""/>
+	<attribute name="ibge" type="String" size="15" constraint=""/>
+	<attribute name="cep" type="String" size="15" constraint=""/>
+	<attribute name="populacao" type="String" size="255" constraint=""/>
+	<attribute name="areakm" type="String" size="255" constraint=""/>
+	<attribute name="densidade" type="String" size="255" constraint=""/>
+	<attribute name="gentilico" type="String" size="255" constraint=""/>
+	<attribute name="capital" type="String" size="255" constraint=""/>
+	<attribute name="distancia_capital" type="String" size="255" constraint=""/>
+	<attribute name="tempo_percurso" type="String" size="255" constraint=""/>
+	<attribute name="latitude" type="String" size="255" constraint=""/>
+	<attribute name="longitude" type="String" size="255" constraint=""/>
+	<attribute name="faixainicial1" type="String" size="255" constraint=""/>
+	<attribute name="faixafinal1" type="String" size="255" constraint=""/>
+	<attribute name="faixainicial2" type="String" size="255" constraint=""/>
+	<attribute name="faixafinal2" type="String" size="255" constraint=""/>
+  </class>
+</templates>
