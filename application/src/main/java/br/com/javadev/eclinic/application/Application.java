@@ -41,9 +41,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = {
+		"br.com.javadev.eclinic.application.data",
 		"br.com.javadev.eclinic.infrastructure.security.config",
 		"org.springframework.security.core.userdetails",
-		"br.com.javadev.eclinic.api.cep.services",
 		"br.com.javadev.eclinic.api.security.services",
 		"br.com.javadev.eclinic.api.config.services",
 		"br.com.javadev.eclinic.api.core.services",
