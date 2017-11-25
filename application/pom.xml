@@ -68,7 +68,7 @@
     </dependency>
 
     <dependency>
-      <groupId>br.com.eclinic.domain</groupId>
+      <groupId>br.com.javadev.eclinic.domain</groupId>
       <artifactId>eclinic-domain</artifactId>
       <version>1.0</version>
     </dependency>
