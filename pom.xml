@@ -97,6 +97,19 @@
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
     
+    <!-- configuração para o heroku -->
+	<dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    
     <!-- Testng -->
     <dependency>
       <groupId>org.testng</groupId>
