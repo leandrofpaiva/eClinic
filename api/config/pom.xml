@@ -2,20 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>br.com.eclinic.api.config</groupId>
+  <groupId>br.com.javadev.eclinic.api.config</groupId>
   <artifactId>eclinic-api-config</artifactId>
   <packaging>jar</packaging>
   <name>eClinic - Config API</name>
   <description>eClinic - Config API</description>
 
   <parent>
-    <groupId>br.com.eclinic.api</groupId>
+    <groupId>br.com.javadev.eclinic.api</groupId>
     <artifactId>eclinic-api</artifactId>
 	<version>1.0</version>
   </parent>
 
   <properties>
-	<start-class>br.com.eclinic.api.services.Application</start-class>
+	<start-class>br.com.javadev.eclinic.api.config.Application</start-class>
   </properties>
   
   <build>
@@ -54,13 +54,13 @@
 
   <dependencies>
     <dependency>
-	  <groupId>br.com.eclinic.domain</groupId>
+	  <groupId>br.com.javadev.eclinic.domain</groupId>
       <artifactId>eclinic-domain</artifactId>
 	  <version>1.0</version>
 	</dependency>
 	
 	<dependency>
-	  <groupId>br.com.eclinic.infrastructure</groupId>
+	  <groupId>br.com.javadev.eclinic.infrastructure</groupId>
       <artifactId>eclinic-infrastructure</artifactId>
       <version>1.0</version>
 	</dependency>

@@ -1,1 +1,0 @@
-curl -i -X GET -H "Content-Type:application/json" -H "Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b20iLCJyb2xlcyI6WyJ1c2VyIl0sImlhdCI6MTQ2MjM2NDQ4Nn0.zZ_n0IibfBJN-K9PlhJOlgI73KypMaYDT9lfhQbwREw" http://localhost:8080/api/cep/findAddressByCep/16074320 

@@ -2,24 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>br.com.eclinic.api</groupId>
+  <groupId>br.com.javadev.eclinic.api</groupId>
   <artifactId>eclinic-api</artifactId>
   <packaging>pom</packaging>
-  <name>eclinic - APIs</name>
-  <description>Colecao de Mcrosservicos</description>
+  <name>eClinic - APIs</name>
+  <description>eClinic - APIs</description>
 
   <parent>
-    <groupId>br.com.eclinic.parent</groupId>
+    <groupId>br.com.javadev.eclinic.parent</groupId>
     <artifactId>eclinic-parent</artifactId>
 	<version>1.0</version>
   </parent>
 
   <modules>
     <module>security</module>
-	<module>cep</module>
-	<!--module>nfe</module-->
 	<module>config</module>
-	<module>medic</module>
+	<module>core</module>
   </modules>
 
   <dependencies>
@@ -33,5 +31,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
 </project>

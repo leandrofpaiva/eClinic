@@ -2,20 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>br.com.eclinic.application</groupId>
+  <groupId>br.com.javadev.eclinic.application</groupId>
   <artifactId>eclinic-application</artifactId>
   <packaging>jar</packaging>
-  <name>eclinic - Application</name>
-  <description>Application Medic</description>
+  <name>eClinic - Application</name>
+  <description>eClinic - Application</description>
 
   <parent>
-    <groupId>br.com.eclinic.parent</groupId>
+    <groupId>br.com.javadev.eclinic.parent</groupId>
     <artifactId>eclinic-parent</artifactId>
     <version>1.0</version>
   </parent>
 
   <properties>
-    <start-class>br.com.eclinic.application.Application</start-class>
+    <start-class>br.com.javadev.eclinic.application.Application</start-class>
   </properties>
   
   <build>
@@ -74,38 +74,26 @@
     </dependency>
 
     <dependency>
-      <groupId>br.com.eclinic.infrastructure</groupId>
+      <groupId>br.com.javadev.eclinic.infrastructure</groupId>
       <artifactId>eclinic-infrastructure</artifactId>
       <version>1.0</version>
     </dependency>
 
     <dependency>
-      <groupId>br.com.eclinic.api.cep</groupId>
-      <artifactId>eclinic-api-cep</artifactId>
-      <version>1.0</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>br.com.eclinic.api.nfe</groupId>
-      <artifactId>eclinic-api-nfe</artifactId>
-      <version>1.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>br.com.eclinic.api.security</groupId>
+      <groupId>br.com.javadev.eclinic.api.security</groupId>
       <artifactId>eclinic-api-security</artifactId>
       <version>1.0</version>
     </dependency>
 
     <dependency>
-      <groupId>br.com.eclinic.api.config</groupId>
+      <groupId>br.com.javadev.eclinic.api.config</groupId>
       <artifactId>eclinic-api-config</artifactId>
       <version>1.0</version>
     </dependency>
     
     <dependency>
-      <groupId>br.com.eclinic.api.medic</groupId>
-      <artifactId>eclinic-api-medic</artifactId>
+      <groupId>br.com.javadev.eclinic.api.core</groupId>
+      <artifactId>eclinic-api-core</artifactId>
       <version>1.0</version>
     </dependency>
   </dependencies>
